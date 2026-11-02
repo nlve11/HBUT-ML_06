@@ -1,0 +1,119 @@
+[
+  {
+    "chunk_id": "api_safety-p01-w01",
+    "source": "api_safety.md",
+    "title": "在线接口与回答边界",
+    "paragraph": 1,
+    "char_start": 0,
+    "char_end": 173,
+    "text": "## 在线接口配置\n在线模式只从环境变量读取 `LLM_API_KEY`、`LLM_BASE_URL` 和 `LLM_MODEL`。密钥不得写入 Python 文件、Markdown 报告、终端截图或版本库。接口返回 401 时应检查密钥和服务地址；返回 429 时应降低频率并按服务方规则退避；发生超时时应缩短上下文并有限次重试，不得无限循环。"
+  },
+  {
+    "chunk_id": "api_safety-p02-w01",
+    "source": "api_safety.md",
+    "title": "在线接口与回答边界",
+    "paragraph": 2,
+    "char_start": 0,
+    "char_end": 139,
+    "text": "## 资料边界与引用\n生成器只能依据检索上下文回答。资料内回答必须携带可追溯的来源编号，编号应能映射到文件名和片段编号；资料外问题统一返回“资料中没有足够依据，无法回答。”确定式抽取模式只是用于验证检索、引用和拒答链路的基线，它不是大语言模型，不得把拼接片段描述成模型生成结果。"
+  },
+  {
+    "chunk_id": "api_safety-p03-w01",
+    "source": "api_safety.md",
+    "title": "在线接口与回答边界",
+    "paragraph": 3,
+    "char_start": 0,
+    "char_end": 144,
+    "text": "## 本地模型\n可选本地生成器使用 `Qwen/Qwen2.5-0.5B-Instruct`，在 CPU 上以确定性解码运行。首次使用需要下载模型权重并占用额外磁盘，生成速度明显慢于在线接口；十六 GB 内存机器应限制上下文和新生成 Token 数，关闭采样，并避免同时运行多个模型进程。"
+  },
+  {
+    "chunk_id": "course_overview-p01-w01",
+    "source": "course_overview.md",
+    "title": "人工智能开发技术（Python）课程说明",
+    "paragraph": 1,
+    "char_start": 0,
+    "char_end": 110,
+    "text": "## 课程与课时\n人工智能开发技术（Python）是一门面向计算机科学与技术专业本科生的实验课，共三十二课时，安排八次实验，每次实验四课时。每次实验围绕一个完整应用主题，按环境核验、核心实现、运行验证和结果分析逐步推进。"
+  },
+  {
+    "chunk_id": "course_overview-p02-w01",
+    "source": "course_overview.md",
+    "title": "人工智能开发技术（Python）课程说明",
+    "paragraph": 2,
+    "char_start": 0,
+    "char_end": 125,
+    "text": "## 运行设备与环境\n课程以普通笔记本电脑为基线：不要求独立显卡，处理器使用 CPU，内存约十六 GB。实验统一使用 Python 3.12；八个实验分别创建独立的 `.venv`，禁止多个实验共用同一虚拟环境。这样可以隔离依赖版本，便于复现和排错。"
+  },
+  {
+    "chunk_id": "course_overview-p03-w01",
+    "source": "course_overview.md",
+    "title": "人工智能开发技术（Python）课程说明",
+    "paragraph": 3,
+    "char_start": 0,
+    "char_end": 119,
+    "text": "## 学习方式\n实验过程中请保留关键命令、版本信息、预期结果与实际结果。程序失败时，可以先阅读异常最后一行，再核对当前目录、虚拟环境、输入文件和参数；仍无法定位时，建议整理成可复现的问题记录。实验报告中请说明问题拆解、验证依据和失败分析。"
+  },
+  {
+    "chunk_id": "rag_principles-p01-w01",
+    "source": "rag_principles.md",
+    "title": "RAG 实现说明",
+    "paragraph": 1,
+    "char_start": 0,
+    "char_end": 260,
+    "text": "## 基本流程\n检索增强生成的处理顺序是：读取文档并保留来源元数据，先按段落分组，再对过长段落按字符窗口切分且保留重叠；随后用文本嵌入模型把片段和问题映射为向量，将向量归一化后通过点积得到余弦相似度，选择 Top-K 片段，拼装带来源编号的上下文，最后交给生成器回答。每个片段应保存来源文件、片段编号、段落序号和字符起止位置，使回答能够反查原文。重叠窗口让位于切分边界的语句同时出现在相邻片段中，代价是索引略有重复；因此重叠长度必须小于窗口长度。回答完成后还要校验引用编号；如果最高相似度低于阈值，应拒绝回答，而不是让生"
+  },
+  {
+    "chunk_id": "rag_principles-p01-w02",
+    "source": "rag_principles.md",
+    "title": "RAG 实现说明",
+    "paragraph": 1,
+    "char_start": 200,
+    "char_end": 329,
+    "text": "是索引略有重复；因此重叠长度必须小于窗口长度。回答完成后还要校验引用编号；如果最高相似度低于阈值，应拒绝回答，而不是让生成器猜测。检索、门控、生成和引用后处理应拆成独立模块，才能逐层定位错误，并让抽取式基线、在线 API 与本地模型复用完全相同的知识上下文。"
+  },
+  {
+    "chunk_id": "rag_principles-p02-w01",
+    "source": "rag_principles.md",
+    "title": "RAG 实现说明",
+    "paragraph": 2,
+    "char_start": 0,
+    "char_end": 233,
+    "text": "## 嵌入与检索参数\n本实验使用 `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`。它可以在本地 CPU 上把中文或英文句段编码成三百八十四维稠密向量。实验调用 `encode` 时启用 `normalize_embeddings=True`，因此每个向量的二范数接近一；归一化向量的矩阵点积等价于余弦相似度。默认批量大小为十六，片段字符上限为二百六十，重叠长度为六十，问答默认取前三个片段。"
+  },
+  {
+    "chunk_id": "rag_principles-p03-w01",
+    "source": "rag_principles.md",
+    "title": "RAG 实现说明",
+    "paragraph": 3,
+    "char_start": 0,
+    "char_end": 163,
+    "text": "## 错误分层\n如果正确来源没有进入 Top-K，问题位于文档读取、切分、嵌入或检索阶段，称为检索错误。如果正确来源已经进入上下文，但回答遗漏事实、引用错误或越过资料编造，则属于生成或后处理错误。如果资料外问题被阈值挡住，是预期拒答；如果资料内问题因阈值过高而被挡住，则属于门控错误。排错时必须先检查检索列表，再检查生成文本。"
+  },
+  {
+    "chunk_id": "submission_rules-p01-w01",
+    "source": "submission_rules.md",
+    "title": "实验提交与评分说明",
+    "paragraph": 1,
+    "char_start": 0,
+    "char_end": 182,
+    "text": "## 必交内容\n实验提交包必须包含项目根目录中的 Python 源代码、`docs` 目录中的课程知识库、`outputs/evaluation_report.json`、记录实验过程的 `report.md`，以及由 `pip freeze` 生成的 `environment.txt`。报告须展示至少一个资料内问题、一个资料外问题和一组 Top-K 对比结果。"
+  },
+  {
+    "chunk_id": "submission_rules-p02-w01",
+    "source": "submission_rules.md",
+    "title": "实验提交与评分说明",
+    "paragraph": 2,
+    "char_start": 0,
+    "char_end": 108,
+    "text": "## 不得提交的内容\n提交包不得包含 `.venv`、模型缓存目录、访问密钥、`.env` 文件以及可重新下载的大模型权重。任何 API 密钥都只能通过环境变量传入。若把密钥写进代码或截图，应立即作废并重新生成密钥。"
+  },
+  {
+    "chunk_id": "submission_rules-p03-w01",
+    "source": "submission_rules.md",
+    "title": "实验提交与评分说明",
+    "paragraph": 3,
+    "char_start": 0,
+    "char_end": 93,
+    "text": "## 评分关注点\n建议评分结构为：可复现运行四十分，检索与问答结果三十分，误差分析二十分，目录规范与安全性十分。只展示一次成功输出、没有版本记录或没有资料外拒答测试，均不能证明系统可靠。"
+  }
+]

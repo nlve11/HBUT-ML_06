@@ -1,0 +1,350 @@
+{
+  "retrieval": [
+    {
+      "k": 1,
+      "hit_at_k": 1.0,
+      "recall_at_k": 0.9375,
+      "rows": [
+        {
+          "question": "课程共有多少课时，分成几次实验？",
+          "retrieved": [
+            "course_overview.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "程序失败时应先检查哪些内容？",
+          "retrieved": [
+            "course_overview.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "没有 GPU 的十六 GB 电脑怎样配置 Python 环境？",
+          "retrieved": [
+            "course_overview.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "提交包必须包含哪些文件？",
+          "retrieved": [
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "为什么不能提交虚拟环境和 API 密钥？",
+          "retrieved": [
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 0.5
+        },
+        {
+          "question": "RAG 从读取资料到回答经过哪些步骤？",
+          "retrieved": [
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "嵌入模型输出多少维，为什么点积等于余弦相似度？",
+          "retrieved": [
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "如何区分检索错误和生成错误？",
+          "retrieved": [
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    {
+      "k": 3,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "rows": [
+        {
+          "question": "课程共有多少课时，分成几次实验？",
+          "retrieved": [
+            "course_overview.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "程序失败时应先检查哪些内容？",
+          "retrieved": [
+            "course_overview.md",
+            "rag_principles.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "没有 GPU 的十六 GB 电脑怎样配置 Python 环境？",
+          "retrieved": [
+            "api_safety.md",
+            "course_overview.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "提交包必须包含哪些文件？",
+          "retrieved": [
+            "api_safety.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "为什么不能提交虚拟环境和 API 密钥？",
+          "retrieved": [
+            "api_safety.md",
+            "course_overview.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "RAG 从读取资料到回答经过哪些步骤？",
+          "retrieved": [
+            "course_overview.md",
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "嵌入模型输出多少维，为什么点积等于余弦相似度？",
+          "retrieved": [
+            "api_safety.md",
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "如何区分检索错误和生成错误？",
+          "retrieved": [
+            "course_overview.md",
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    {
+      "k": 5,
+      "hit_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "rows": [
+        {
+          "question": "课程共有多少课时，分成几次实验？",
+          "retrieved": [
+            "course_overview.md",
+            "rag_principles.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "程序失败时应先检查哪些内容？",
+          "retrieved": [
+            "course_overview.md",
+            "rag_principles.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "没有 GPU 的十六 GB 电脑怎样配置 Python 环境？",
+          "retrieved": [
+            "api_safety.md",
+            "course_overview.md",
+            "rag_principles.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "提交包必须包含哪些文件？",
+          "retrieved": [
+            "api_safety.md",
+            "course_overview.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "为什么不能提交虚拟环境和 API 密钥？",
+          "retrieved": [
+            "api_safety.md",
+            "course_overview.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "RAG 从读取资料到回答经过哪些步骤？",
+          "retrieved": [
+            "api_safety.md",
+            "course_overview.md",
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "嵌入模型输出多少维，为什么点积等于余弦相似度？",
+          "retrieved": [
+            "api_safety.md",
+            "rag_principles.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        },
+        {
+          "question": "如何区分检索错误和生成错误？",
+          "retrieved": [
+            "course_overview.md",
+            "rag_principles.md",
+            "submission_rules.md"
+          ],
+          "hit": 1.0,
+          "recall": 1.0
+        }
+      ]
+    }
+  ],
+  "end_to_end": {
+    "refusal_accuracy": 1.0,
+    "citation_completeness": 1.0,
+    "rows": [
+      {
+        "question": "课程共有多少课时，分成几次实验？",
+        "scope": true,
+        "retrieved": [
+          "course_overview.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "程序失败时应先检查哪些内容？",
+        "scope": true,
+        "retrieved": [
+          "course_overview.md",
+          "rag_principles.md",
+          "submission_rules.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "没有 GPU 的十六 GB 电脑怎样配置 Python 环境？",
+        "scope": true,
+        "retrieved": [
+          "api_safety.md",
+          "course_overview.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "提交包必须包含哪些文件？",
+        "scope": true,
+        "retrieved": [
+          "api_safety.md",
+          "submission_rules.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "为什么不能提交虚拟环境和 API 密钥？",
+        "scope": true,
+        "retrieved": [
+          "api_safety.md",
+          "course_overview.md",
+          "submission_rules.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "RAG 从读取资料到回答经过哪些步骤？",
+        "scope": true,
+        "retrieved": [
+          "course_overview.md",
+          "rag_principles.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "嵌入模型输出多少维，为什么点积等于余弦相似度？",
+        "scope": true,
+        "retrieved": [
+          "api_safety.md",
+          "rag_principles.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "如何区分检索错误和生成错误？",
+        "scope": true,
+        "retrieved": [
+          "course_overview.md",
+          "rag_principles.md"
+        ],
+        "refused": false,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "明天香港会不会下雨？",
+        "scope": false,
+        "retrieved": [
+          "api_safety.md",
+          "course_overview.md",
+          "rag_principles.md"
+        ],
+        "refused": true,
+        "diagnosis": "PASS"
+      },
+      {
+        "question": "学校一等奖学金金额是多少？",
+        "scope": false,
+        "retrieved": [
+          "course_overview.md",
+          "submission_rules.md"
+        ],
+        "refused": true,
+        "diagnosis": "PASS"
+      }
+    ]
+  }
+}
